@@ -11,9 +11,8 @@ def pBigger(domain, password):
 		domain += domain[i]
 	return domain
 
-#(ascii value domain's char + ascii value of pass's char) mod 33
+#((ascii value domain's char + ascii value of pass's char) mod 93 ) + 33
 def passGen(domain, password):
-	less, most= 33, 126
 	genPass = ''
 	for i in range(0,len(domain)):
 		genPass += chr(((ord(password[i]) + ord(domain[i])) % 93) + 33)
