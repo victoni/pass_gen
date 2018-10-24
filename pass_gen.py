@@ -26,10 +26,10 @@ def passGen(domain, password):
 def main():
 	if((len(sys.argv) < 3) or(len(sys.argv) > 3)):
 		print('''
-Use: python pass_gen.py [domain] [password]
+Use: python {0} [domain] [password]
 Example: 
-python pass_gen.py facebook greatpassword
-4:/-=F7E@?9>-''')
+python {0} facebook greatpassword
+4:/-=F7E@?9>-'''.format(sys.argv[0]))
 		sys.exit()
 
 	domain = sys.argv[1]
