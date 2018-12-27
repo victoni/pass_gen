@@ -26,7 +26,7 @@ def passGen(domain, password):
 def main():
 	if((len(sys.argv) < 3) or(len(sys.argv) > 3)):
 		print('''
-Use: python {0} [domain] [password]
+Use: python {0} [domain] [password]\n
 Example: 
 python {0} facebook greatpassword
 4:/-=F7E@?9>-'''.format(sys.argv[0]))
