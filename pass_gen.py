@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 
 #bringing domain and password to equal length, in case domain's length is greater than the password's length --> facebook adminadm
