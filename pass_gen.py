@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 
-import sys
+import sys, argparse
 
-#bringing domain and password to equal length, in case domain's length is greater than the password's length --> facebook adminadm
-def dBigger(domain, password):
+
+
+#bringing domain and password to equal length
+def func(domain, password):
 	for i in range(0,len(domain)-len(password)):
 		password += password[i]
 	return password
-#bringing domain and password to equal length, in case password's length is greater than the domain's length --> redditre password
-def pBigger(domain, password):
-	for i in range(0,len(password)-len(domain)):
-		domain += domain[i]
-	return domain
+
 
 #((ascii value domain's char + ascii value of pass's char) mod 93 ) + 33
 def passGen(domain, password):
@@ -38,9 +36,9 @@ python {0} facebook greatpassword
 	password = sys.argv[2]
 	npass = ''
 	if len(domain) > len(password):
-		password = dBigger(domain, password)
+		password = func(domain, password)
 	elif len(domain) < len(password):
-		domain = pBigger(domain, password)
+		domain = func(password, domain)
 	else:
 		pass
 	return print(passGen(domain, password))
