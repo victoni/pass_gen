@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-
-import sys
+import sys, pyperclip, argparse
+from getpass import getpass
 
 #bringing domain and password to equal length
 def func(domain, password):
@@ -22,26 +22,27 @@ def passGen(domain, password):
 
 
 def main():
-	if((len(sys.argv) < 2) or(len(sys.argv) > 2)):
-		print('''
-Use: python {0} [domain]\n
-Example: 
-python3 {0} facebook
-Enter your bad password: password
-Your password:
+	parser = argparse.ArgumentParser()
+	parser.add_argument("-d", help="the domain for the password")
+	parser.add_argument("-c", help="copies the generated password into your clipboard without printing it", action="store_true")
+	args = parser.parse_args()
 
-=)=?@EH6e8
-'''.format(sys.argv[0]))
-		sys.exit()
+	if args.d is None:
+		parser.parse_args(['-h'])
+	domain = args.d
+	password = getpass("Enter your bad password: ")
+	
 
-	domain = sys.argv[1]
-	password = input("Enter your bad password: ")
 	if len(domain) > len(password):
 		password = func(domain, password)
 	elif len(domain) < len(password):
 		domain = func(password, domain)
 	else:
 		pass
+	
+
+	if args.c:
+		return pyperclip.copy(passGen(domain, password))
 	return print("Your password:\n\n" + passGen(domain, password) + "\n")
 
 
