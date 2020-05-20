@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, argparse
-
-
+import sys
 
 #bringing domain and password to equal length
 def func(domain, password):
