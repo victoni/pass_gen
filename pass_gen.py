@@ -24,24 +24,27 @@ def passGen(domain, password):
 
 
 def main():
-	if((len(sys.argv) < 3) or(len(sys.argv) > 3)):
+	if((len(sys.argv) < 2) or(len(sys.argv) > 2)):
 		print('''
-Use: python {0} [domain] [password]\n
+Use: python {0} [domain]\n
 Example: 
-python {0} facebook greatpassword
-4:/-=F7E@?9>-'''.format(sys.argv[0]))
+python3 {0} facebook
+Enter your bad password: password
+Your password:
+
+=)=?@EH6e8
+'''.format(sys.argv[0]))
 		sys.exit()
 
 	domain = sys.argv[1]
-	password = sys.argv[2]
-	npass = ''
+	password = input("Enter your bad password: ")
 	if len(domain) > len(password):
 		password = func(domain, password)
 	elif len(domain) < len(password):
 		domain = func(password, domain)
 	else:
 		pass
-	return print(passGen(domain, password))
+	return print("Your password:\n\n" + passGen(domain, password) + "\n")
 
 
 if __name__ == '__main__':

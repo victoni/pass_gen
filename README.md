@@ -4,18 +4,13 @@ Small script that generates a password that satisfies the conditions (uppercase 
 
 Examples:
 ``` 
-python3 pass_gen.py yahoo password
+python3 pass_gen.py yahoo
+Your bad password: password
+Your password:
+
 P)BIMO:3p8
 
-python3 pass_gen.py freecodecamp password
-=:??AE=0:)GJa12
-
-python3 pass_gen.py www.github.com password
-N?QeE?M3L*e=MCn14
- 
 ```
 
-Passwords were tested [here](http://www.passwordmeter.com)
-
- Any contribution/criticism is welcome :grimacing: 
-
+`password` can be cracked instantly using wordlists.
+`P)BIMO:3p8` can be cracked in 53 years (tested [here](https://howsecureismypassword.net/))
