@@ -20,6 +20,14 @@ P)BIMO:3p8
 
 ```
 ```
+$ python3 pass_gen.py -d facebook
+Your bad password: password
+Your password:
+
+=)=?@EH6e8
+
+```
+```
 $ python3 pass_gen.py -d yahoo -c
 Your bad password: [typing]
 $ #copied into your clipboard
